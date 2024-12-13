@@ -1,0 +1,16 @@
+.app-header{
+    background-color: rgba(58, 81, 207, 0.966);
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+.app-header .header-title {
+    font-size: 1.5rem;
+    margin: 10px;
+    font-weight: solid;
+}
+
+.app-header span{
+    margin: 10px;
+}
