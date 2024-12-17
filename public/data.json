@@ -1,0 +1,17 @@
+[{
+    "id":1,
+    "title": "Appointment for October",
+    "description" : "Interview rescheduled to October",
+    "isActive" : true
+ },
+ {
+    "id":2,
+    "title": "Appointment for November",
+    "description" : "Interview rescheduled to November",
+    "isActive" : true
+ },
+{   "id":3,
+    "title": "Appointment for December",
+    "description" : "Interview rescheduled to December",
+    "isActive" : false
+ }]
