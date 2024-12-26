@@ -1,0 +1,29 @@
+.usage{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+.usageItem{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 20px;
+    align-items:center ;
+    margin: 15px;
+}
+.usageItem label{
+    font-size: 60px;
+    font-weight: bold;
+   
+}
+.timebomb{
+    display: flex;
+    flex-direction: column;
+    font-size: 100px;
+    background-color: blue;
+    justify-content: center;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 15px;
+}

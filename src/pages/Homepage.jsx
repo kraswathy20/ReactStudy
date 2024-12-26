@@ -1,16 +1,17 @@
 import React from "react"
 import Tools from "../components/Tools"
-import SimpleList from "./SimpleList";
+import SimpleList from "../list/SimpleList";
 
 
 
-class List extends React.Component{
+class Homepage extends React.Component{
     // State initialization
    constructor(props){
     super(props);
     this.state={
         data : [],
-        activeState : 'all'
+        activeState : 'all',
+        message : ''
     }
    }
 
@@ -25,6 +26,20 @@ componentDidMount(){
             data : data
         })
     })
+    
+}
+
+componentDidUpdate(prevProps,prevState){
+    if(prevState.message !== this.state.message){
+    console.log("componentDidUpdate");
+    this.setState({
+        message: 'message me'
+    })
+}
+}
+
+componentWillUnmount(){
+    console.log("componentWillUnmount");
     
 }
     
@@ -92,4 +107,4 @@ componentDidMount(){
     }
 }
 
-export default List
+export default Homepage
