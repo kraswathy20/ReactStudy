@@ -1,8 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
 import Tools from "../components/Tools"
 import SimpleList from "../list/SimpleList";
 
-
+const MyContext = React.createContext()
+const MyContext2 = React.createContext(500)
 
 class Homepage extends React.Component{
     // State initialization
@@ -11,10 +12,12 @@ class Homepage extends React.Component{
     this.state={
         data : [],
         activeState : 'all',
-        message : ''
+        message : '',
+        showLabel : true
     }
    }
 
+    
 componentDidMount(){
     console.log("componentDidMount");
    fetch('/data.json')
@@ -78,6 +81,14 @@ componentWillUnmount(){
             data : [item, ...this.state.data]
         })
     }
+
+    handleShow = (evt) =>{
+        this.setState({
+            showLabel : evt.target.checked
+        })
+    }
+
+ 
     render(){
         const{
             data,
@@ -100,11 +111,24 @@ componentWillUnmount(){
         
         
         return(
-            <Tools labelValue={activeState} onAction={this.onListChange} addnew={this.handleAdd}>
-                <SimpleList data={newList} onAction={this.handleDelete} labelClick={this.handleLableClick}/>
-             </Tools>
+            <div> 
+               <input checked={this.state.showLabel} onClick={this.handleShow} type="checkbox" id="show"  style={{marginLeft:'10px',marginTop:'5px'}}/>
+               <label htmlFor="show"> Show Label</label>
+               <MyContext2.Provider value={100}>
+               <MyContext.Provider value={this.state.showLabel}>
+                <Tools labelValue={activeState} onAction={this.onListChange} addnew={this.handleAdd}>
+                    <SimpleList data={newList} onAction={this.handleDelete} labelClick={this.handleLableClick}/>
+                </Tools>
+             </MyContext.Provider>
+             </MyContext2.Provider>
+            </div>
         )
     }
 }
 
 export default Homepage
+
+export {
+    MyContext,
+    MyContext2
+}
