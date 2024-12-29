@@ -4,7 +4,7 @@ function JustInfo({showLabel ,testValue}) {
   console.log("RENDER JUSTINFO");
   
   return (
-    <div>JustInfo {showLabel} {testValue.activeState} </div>
+    <div>JustInfo {showLabel}  </div>
   )
 }
 

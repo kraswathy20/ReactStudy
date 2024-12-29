@@ -1,4 +1,4 @@
-import React,{useEffect, useMemo, useState} from "react"
+import React,{useCallback, useEffect, useMemo, useState} from "react"
 import Tools from "../components/Tools"
 import SimpleList from "../list/SimpleList";
 import JustInfo from "./JustInfo";
@@ -65,13 +65,20 @@ const newList = data.filter((item)=>{
 // const value = {
 //     key : 'home'
 // }
-const value = useMemo(()=>{
-return {
-        key : 'home',
-        activeState : activeState
-    }
-},[activeState])
+// const value = useMemo(()=>{
+// return {
+//         key : 'home',
+//         activeState : activeState
+//     }
+// },[activeState])
 
+// const handleClick =() =>{
+//     console.log("Clicked");
+// }
+const handleClick =  useCallback(
+     () =>{
+    console.log("Clicked");
+},[])
  return(
     <div> 
     <input checked={showLabel} onClick={handleShow} type="checkbox" id="show"  style={{marginLeft:'10px',marginTop:'5px'}}/>
@@ -81,7 +88,7 @@ return {
      <Tools labelValue={activeState} onAction={onListChange} addnew={handleAdd}>
          <SimpleList data={newList} onAction={handleDelete} labelClick={handleLableClick}/>
      </Tools>
-  <JustInfo testValue={value}  showLabel={showLabel}/>
+  <JustInfo onClick={handleClick} showLabel={showLabel}/>
   </MyContext.Provider>
   </MyContext2.Provider>
  </div>
