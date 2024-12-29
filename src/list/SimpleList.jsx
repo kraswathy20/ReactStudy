@@ -2,14 +2,18 @@ import React from 'react'
 import ListItem from "./ListItem"
 
 function SimpleList(props) {
+  console.log("RENDER SIMPLELIST");
+
     const{
         data,
         onAction,
         labelClick
     }=props;
   return (
+    
     <div className="app-list">
     {
+      
         data.map((obj)=>{
             return   <ListItem
              key={obj.title}

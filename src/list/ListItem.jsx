@@ -4,7 +4,9 @@ import './ListItem.css'
 
 
 function ListItem({title,descr,isActive,onDelete,labelClick}){
+   console.log("RENDER LISTITEM");
     return(
+      
         <div className="list-item">
           
            <div className="list-title">

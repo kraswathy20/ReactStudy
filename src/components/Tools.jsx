@@ -3,6 +3,8 @@ import Addnew from "./Addnew";
 import './Tools.css'
 class Tools extends React.Component{
     render(){
+        console.log("RENDER TOOLS");
+
         const{
             children,
             onAction,

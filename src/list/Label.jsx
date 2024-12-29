@@ -1,12 +1,13 @@
 import { useContext } from 'react';
 import React from "react";
 import './Label.css'
-import { MyContext } from '../pages/HomePage';
-import { MyContext2 } from '../pages/HomePage';
+import { MyContext } from '../pages/HomepageCls';
+import { MyContext2 } from '../pages/HomepageCls';
 function Label(props){
+    console.log("RENDER LABEL");
     const val = useContext(MyContext)
     const val2 = useContext(MyContext2)
-    console.log(val2);
+    // console.log(val2);
     
 
     const style = props.isActive ? {backgroundColor:"green"} : {backgroundColor : "orange"}
